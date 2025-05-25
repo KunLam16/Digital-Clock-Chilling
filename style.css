@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.cdnfonts.com/css/ds-digital');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Cabin:ital,wght@0,400..700;1,400..700&family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Lexend:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans+Mono:wght@100..900&family=Oswald:wght@200..700&family=Platypi:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Cabin:ital,wght@0,400..700;1,400..700&family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Lexend:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans+Mono:wght@100..900&family=Oswald:wght@200..700&family=Platypi:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Tilt+Warp&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,600&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Lexend+Deca:wght@500&family=Lexend:wght@500&family=Readex+Pro:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Lexend+Deca:wght@500&family=Lexend:wght@300&family=Readex+Pro:wght@500&display=swap');
+
+body {
+  font-family: 'Arial', sans-serif;
+  /* background-color: #1e1e1e; */
+  color: #00ffcc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: background-image 1s ease-in-out;
+}
+/* Lớp phủ tối */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* lớp tối phủ */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Đảm bảo nội dung nằm trên lớp tối */
+* {
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-family: "Lexend Deca", sans-serif;
+  color: #9fd3c7;
+  cursor: pointer;
+  font-size: 60px;
+}
+
+.clock {
+  font-family: 'DS-Digital', monospace;
+  font-size: 200px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  color: #ececec;
+  text-shadow: 0 0 10px #9fd3c7;
+  cursor: pointer;
+   text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+}
+
+.clock:hover {
+  color: #ffffff;
+  text-shadow:
+    0 0 10px #385170,
+    0 0 20px #385170,
+    0 0 30px #385170;
+  transform: scale(1.15);
+  transition: linear 0.3s;
+ 
+}
+
+input[type="datetime-local"] {
+  padding: 10px;
+  font-size: 30px;
+  margin-bottom: 30px;
+  border: 2px solid #00ffcc;
+  border-radius: 5px;
+  /* background-color: #233142; */
+  color: #ffffff;
+  font-family: "Lexend Deca", sans-serif;
+  background: rgba(35, 49, 66, 0.305); /* Màu có độ trong suốt */
+  backdrop-filter: blur(8px);        /* Làm mờ phần nền phía sau */
+  -webkit-backdrop-filter: blur(10px); /* Hỗ trợ Safari */
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3); /* Bóng mềm */
+  
+}
+input[type="datetime-local"]:hover{
+  box-shadow:
+    0 0 10px #00ffcc,
+    0 0 15px #00ffcc,
+    0 0 20px #00ffcc;
+  transition: linear 0.5s;
+
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 26px;
+  cursor: pointer;
+  background-color: #00ffcc;
+  color: #1e1e1e;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+  font-family: "Lexend Deca", sans-serif ;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #00bbaa;
+}
+
+.countdown {
+  font-size: 28px;
+  color: #ffcc00;
+  font-family: "Lexend Deca", sans-serif;
+  text-shadow: 0 0 5px #ffcc00;
+  cursor: help;
+  margin-bottom: 20px;
+}
+
+.greeting{
+  font-size: 30px;
+  color: #e7eaf6;
+  font-family: "Lexend Deca", sans-serif;
+  text-shadow: 0 0 2px #e7eaf6;
+  cursor: pointer;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 10px;    /* cách trên 10px */
+  right: 10px;  /* cách phải 10px */
+}
+
+.master_play{
+    width: 95%;
+    height: 10%;
+    background: rgba(35, 49, 66, 0.305); /* Màu có độ trong suốt */
+    backdrop-filter: blur(8px);        /* Làm mờ phần nền phía sau */
+    -webkit-backdrop-filter: blur(10px); /* Hỗ trợ Safari */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3); /* Bóng mềm */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Viền nhẹ */
+    
+}
+.master_play{
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+ }
+ .master_play .wave{
+    width: 32px;
+    height: 32px;
+    /* border: 1px solid #ff4e02; */
+    padding-bottom: 5px;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 15px;
+ }
+
+
+ .master_play .wave .wave1{
+    width: 10px;
+    height: 10px;
+    margin-right: 3px;
+    border-radius: 10px 10px 0px 0px;
+    background: #36e2ec;
+    /* animation: wave 5s linear infinite; */
+ }
+.master_play .wave .wave1:nth-child(2){
+    height: 15px; 
+    /* animation-delay: .4s; */
+ }
+ .master_play .wave .wave1:nth-child(3){
+    height: 8px; 
+    /* animation-delay: .8s; */
+
+ }
+ .master_play .active2 .wave1{
+    animation: wave .6s linear infinite;
+ }
+ .master_play .active2 .wave1:nth-child(2){
+    animation-delay: .4s;
+ }
+ .master_play .active2 .wave1:nth-child(3){
+    animation-delay: .9s;
+ }
+ @keyframes wave{
+     0%{
+         height: 10px;
+     }
+     50%{
+         height: 18px;
+     }
+     100%{
+         height: 10px;
+     }
+ }
+ .master_play img{
+    width: 42px;
+    height: 42px;
+    margin-left: 5px;
+    cursor: pointer;
+    
+ }
+ .master_play h5{
+    width: 130px;
+    font-size: 16px!important;
+    margin-left: 15px;
+    color: #fff;
+    line-height: 22px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lexend', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 400;
+    
+ }
+ .master_play h5 .subtitle{
+    font-size: 12px;
+    color: #9fd3c7;
+    font-family: 'Poppins', sans-serif;
+    line-height: 17px;
+    
+ }
+ .master_play .icon{
+    font-size: 35px;
+    color: #00ffcc;
+    margin: 0px 20px 0px 40px;
+ }
+ .master_play .icon .bi{
+    cursor: pointer;
+    outline: none;
+ }
+ .master_play .icon .bi:nth-child(2){
+    border: 1px solid rgba(105, 182, 173, 0.1);
+    border-radius: 50%;
+    padding: 1px 3px 0px 6px;
+    margin: 0px 5px;
+    transition: .3s linear;
+ }
+ .master_play span{
+    color: #fff;
+    width: 32px;
+    font-size: 15px;
+    font-weight: 400;
+ }
+ .master_play #currentStart{
+   margin: 0px 0px 0px 20px;
+ }
+ .master_play .bar{
+    position: relative;
+    width: 43%;
+    height: 2px;
+    background: rgb(105, 105, 170,.1);
+    margin: 0px 15px 0px 10px;
+ }
+ .master_play .bar .bar2{
+   position: absolute;
+   background: #00ffcc;
+   width: 0%;
+   height: 100%;
+   top: 0;
+   transition: 0.01s linear;
+ }
+ .master_play .bar .dot{
+    position: absolute;
+   width: 6px;
+   height: 6px;
+   background: #00ffcc;
+   border-radius: 50%;
+   left: 0%;
+   top: -1px;
+   /* transition: .01s linear; */
+   transition: left 0.3s ease;
+  }
+  .master_play .bar .dot::before{
+    content: '';
+    position: absolute;
+   width: 15px;
+   height: 15px;
+   border:1px solid #00ffcc;
+   border-radius: 50%;
+   left: -6px;
+   top: -6px;
+   box-shadow: inset 0px 0px 10px #00ffcc;
+  }
+ .master_play .bar input{
+    position: absolute;
+    width: 100%;
+    top: -6px;
+    left: 0;
+    cursor: pointer;
+    z-index: 9;
+    transition: 3s linear;
+    opacity: 0;
+  }
+ .master_play .vol{
+   position: relative;
+   width: 150px;
+   height: 2px;
+   margin-left: 50px;
+   background: rgb(105, 105, 170,.1);
+  }
+ .master_play .vol .bi{
+   position: absolute;
+   color: #00ffcc;
+   font-size: 30px;
+   top: -15px;
+   left: -40px;
+   }
+ .master_play .vol input{
+    position: absolute;
+    width: 100%;
+    top: -10px;
+    left: 0;
+    cursor: pointer;
+    z-index: 9;
+    transition: 3s linear;
+    opacity: 0;
+  }
+ .master_play .vol .vol_bar{
+    position: absolute;
+    background: #00ffcc;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transition: .01s linear;
+  }
+ .master_play .vol .dot{
+     position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #00ffcc;
+    border-radius: 50%;
+    left: 100%;
+    top: -1px;
+    /* transition: .01s linear; */
+    transition: left 0.3s ease;
+   }
+ .master_play .vol .dot::before{
+     content: '';
+     position: absolute;
+    width: 15px;
+    height: 15px;
+    border:1px solid #00ffcc;
+    border-radius: 50%;
+    left: -6px;
+    top: -6px;
+    box-shadow: inset 0px 0px 10px #00ffcc;
+   }
+
+   /* Tablet: width từ 768px trở xuống */
+@media (max-width: 768px) {
+  .master_play {
+    padding: 0 10px;
+    height: 12%;
+  }
+
+  .master_play img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .master_play h5 {
+    width: 100px;
+    font-size: 14px !important;
+    margin-left: 10px;
+  }
+
+  .master_play h5 .subtitle {
+    font-size: 10px;
+  }
+
+  .master_play .icon {
+    font-size: 28px;
+    margin: 0 10px;
+  }
+
+  .master_play span {
+    font-size: 13px;
+  }
+}
+
+/* Mobile: width từ 480px trở xuống */
+@media (max-width: 480px) {
+  .master_play {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .master_play .wave {
+    padding-left: 0;
+    margin-bottom: 5px;
+  }
+
+  .master_play img {
+    width: 32px;
+    height: 32px;
+    margin-left: 0;
+  }
+
+  .master_play h5 {
+    font-size: 13px !important;
+    margin: 5px 0;
+    width: auto;
+  }
+
+  .master_play h5 .subtitle {
+    font-size: 10px;
+  }
+
+  .master_play .icon {
+    font-size: 24px;
+    margin: 10px 0 0 0;
+  }
+
+  .master_play span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .master_play .icon{
+    font-size: 20px;
+    
+
+  }
+    .master_play h5 .subtitle {
+    font-size: 10px;
+  }
+
+  .master_play .icon {
+    font-size: 25px;
+    margin: 0 10px;
+  }
+  .master_play h5{
+    width: 130px;
+  }
+}
+@media (max-width: 1250px){
+  .master_play .icon{
+    font-size: 15px;
+}
+.master_play h5{
+    width: 100px;
+    font-size: 12px!important;
+    
+    
+ }
+ .master_play h5 .subtitle{
+    font-size: 8px;
+    
+    
+ }
+}
+@media (max-width: 1150px){
+  .master_play .bar{
+    position: relative;
+    width: 30%;
+    height: 2px;
+    background: rgb(105, 105, 170,.1);
+    margin: 0px 15px 0px 10px;
+ }
+
+}
+@media (max-width: 1000px){
+  .master_play .bar{
+    position: relative;
+    width: 20%;
+    height: 2px;
+    background: rgb(105, 105, 170,.1);
+    margin: 0px 15px 0px 10px;
+}
+ .master_play img{
+    width: 36px;
+    height: 36px;
+    margin-left: 2px;
+    cursor: pointer;
+    
+ }
+}
+@media(max-width:200px){
+  .master_play{
+    display: none;
+  }
+}
+@media (max-width: 900px){
+  .master_play .icon{
+    font-size: 10px;
+}
+.master_play h5{
+    width: 100px;
+    font-size: 10px!important;
+    
+    
+ }
+ .master_play h5 .subtitle{
+    font-size: 6px;
+    
+    
+ }
+}
+
+@media (max-width: 800px){
+  .master_play .icon{
+    font-size: 10px;
+}
+.master_play h5{
+    width: 100px;
+    font-size: 10px!important;
+    
+    
+ }
+ .master_play h5 .subtitle{
+    font-size: 6px;
+    
+    
+ }
+ .master_play .bar{
+    display: none;
+}
+.master_play .vol{
+  display: none;
+}
+.master_play #currentEnd{
+  display: none;
+}
+.clock{
+  font-size: 70px;
+}
+.clock:hover{
+  font-size: 80px;
+}
+h1{
+  font-size: 30px;
+}
+.greeting{
+  font-size: 20px;
+}
+input[type="datetime-local"] {
+  padding: 5px;
+  font-size: 25px;
+  }
+button{
+  font-size: 16px;
+}  
+.master_play{
+  width: 70%;
+  height: 8%;
+}
+.master_play .wave{
+    width: 20px;
+    height: 20px;
+  margin-right: 10px;
+ }
+}
+
